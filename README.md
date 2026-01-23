@@ -2,7 +2,7 @@
 
 # Audiophile
 
-A multi-page e-commerce website and an all-in-one stop featuring products that fulfills your audio needs. 
+A multi-page e-commerce website and an all-in-one stop featuring products that fulfills your audio needs.
 
 ### Built With
 
@@ -35,6 +35,7 @@ Distribution files can be produced using:<br>
 This project is for personal use only. I do not own any of the rights for the assets used in this project.
 
 ### To-do
+
 - [ ] View the optimal layout for the app depending on their device's screen size
 - [ ] See hover states for all interactive elements on the page
 - [ ] Add/Remove products from the cart
@@ -46,7 +47,7 @@ This project is for personal use only. I do not own any of the rights for the as
 - [ ] VAT is calculated as 20% of the product total, excluding shipping
 - [ ] See an order confirmation modal after checking out with an order summary
 - [ ] Keep track of what's in the cart, even after refreshing the browser
-- [ ] Convert images from .jpg to .webp 
+- [ ] Convert images from .jpg to .webp
 
 ---
 
