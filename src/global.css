@@ -36,9 +36,11 @@
 	--color-secondary: hsl(21, 94%, 75%);
 	--color-dark-900: hsl(0, 0%, 0%);
 	--color-dark-800: hsl(0, 0%, 6%);
+	--color-dark-700: hsl(0, 0%, 10%);
 	--color-light-900: hsl(0, 0%, 100%);
 	--color-light-800: hsl(0, 0%, 98%);
 	--color-light-700: hsl(0, 0%, 95%);
+	--color-gray: hsl(0, 0%, 59%);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -95,7 +97,7 @@
 		letter-spacing: 1.3px;
 	}
 
-	.overline {
+	.text-overline {
 		font-size: 0.875rem;
 		font-weight: 400;
 		line-height: 1.1875px;
@@ -107,6 +109,13 @@
 		font-size: 0.8125rem;
 		font-weight: 700;
 		line-height: 1.5625rem;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	.category {
+		font-size: 0.9375rem;
+		font-weight: 700;
 		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
@@ -133,6 +142,5 @@
 body {
 	position: relative;
 	min-height: 100dvh;
-	max-width: 70rem;
 	margin: 0 auto;
 }

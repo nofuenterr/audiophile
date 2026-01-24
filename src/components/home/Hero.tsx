@@ -1,3 +1,3 @@
 export default function Hero() {
-	return <div>Hero</div>;
+	return <div className="bg-dark-900">Hero</div>;
 }
