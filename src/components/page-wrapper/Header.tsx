@@ -13,13 +13,13 @@ export default function Header() {
 
 	return (
 		<header
-			className="bg-dark-900 text-light-900 border-b-gray relative border-b px-6 py-8 md:px-10 lg:py-9"
+			className="bg-dark-900 text-light-900 relative px-6 md:px-10"
 			style={{
 				backgroundColor:
 					pathname === '/' ? 'var(--color-dark-700)' : 'var(--color-dark-900)',
 			}}
 		>
-			<ContentWrapper className="flex items-center justify-between gap-10.5 md:justify-start lg:justify-between">
+			<ContentWrapper className="border-b-gray/20 flex items-center justify-between gap-10.5 border-b py-8 md:justify-start lg:justify-between lg:py-9">
 				<button
 					className="cursor-pointer lg:hidden"
 					onClick={() => setMenu((s) => !s)}
