@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 export default function PageWrapper() {
 	return (
-		<div className="flex min-h-dvh flex-col">
+		<div className="grid min-h-dvh grid-rows-[auto_1fr_auto]">
 			<ScrollToTop />
 
 			<Header />
