@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Product } from '../../types/product';
 import formatPrice from '../../utils/formatPrice';
 import ContentWrapper from '../shared/ContentWrapper';
@@ -66,6 +67,8 @@ function ProductInfo({
 	description,
 	price,
 }: ProductInfoType) {
+	const [quantity, setQuantity] = useState<number>(1);
+
 	return (
 		<div className="md:self-center">
 			{isNew ? (
@@ -78,15 +81,40 @@ function ProductInfo({
 			<p className="heading heading-6 mb-8 lg:mb-12">$ {formatPrice(price)}</p>
 			<div className="flex flex-wrap items-center gap-4">
 				<div className="bg-light-700 flex w-30 items-center gap-5 p-4">
-					<button className="subtitle hover:text-primary grid size-4 cursor-pointer place-content-center opacity-25 hover:opacity-100">
-						-
-					</button>
+					{quantity > 1 ? (
+						<button
+							aria-label="decrement quantity"
+							className="subtitle hover:text-primary grid size-4 cursor-pointer place-content-center opacity-25 hover:opacity-100"
+							onClick={() => {
+								if (quantity > 1) setQuantity((s) => s - 1);
+							}}
+						>
+							-
+						</button>
+					) : (
+						<div className="size-4"></div>
+					)}
 					<input
-						type="number"
+						type="text"
 						min={1}
-						className="no-spinner subtitle w-full text-center"
+						value={quantity}
+						onChange={(e) => {
+							const value = parseInt(e.target.value);
+							if (/^\d*$/.test(String(value)) && value) {
+								setQuantity(value);
+							}
+						}}
+						inputMode="numeric"
+						pattern="[0-9]*"
+						className="subtitle w-full text-center"
 					/>
-					<button className="subtitle hover:text-primary grid size-4 cursor-pointer place-content-center opacity-25 hover:opacity-100">
+					<button
+						aria-label="increment quantity"
+						className="subtitle hover:text-primary grid size-4 cursor-pointer place-content-center opacity-25 hover:opacity-100"
+						onClick={() => {
+							setQuantity((s) => s + 1);
+						}}
+					>
 						+
 					</button>
 				</div>
