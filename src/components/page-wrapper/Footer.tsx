@@ -9,7 +9,7 @@ const currentYear = new Date(Date.now()).getFullYear();
 
 export default function Footer() {
 	return (
-		<footer className="bg-dark-800 text-light-900 mt-10 px-6 md:mt-24 md:px-10 lg:mt-30">
+		<footer className="bg-dark-800 text-light-900 mt-16 md:mt-24 lg:mt-30">
 			<ContentWrapper className="grid gap-12 pt-13 pb-9.5 md:gap-8 md:pt-15 md:pb-11.5 lg:gap-9 lg:pt-18.5 lg:pb-12">
 				<div className="grid justify-items-center gap-12 md:justify-items-start md:gap-8 lg:flex lg:items-center lg:justify-between">
 					<a href="#">

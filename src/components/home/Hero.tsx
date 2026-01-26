@@ -6,7 +6,7 @@ export default function Hero() {
 	const heroProduct = data[3];
 
 	return (
-		<section className="bg-dark-700 text-light-900 px-6 md:px-10">
+		<section className="bg-dark-700 text-light-900">
 			<ContentWrapper className='grid justify-items-center bg-[url("/assets/home/mobile/image-header.jpg")] bg-cover bg-center bg-no-repeat py-28 text-center md:bg-[url("/assets/home/tablet/image-header.jpg")] md:pt-32 md:pb-40 lg:justify-items-start lg:bg-[url("/assets/home/desktop/image-hero.jpg")] lg:text-start'>
 				<div className="max-w-[24rem]">
 					<p className="text-overline mb-4 opacity-50 bg-blend-normal md:mb-6">

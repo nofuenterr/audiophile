@@ -4,7 +4,7 @@ import ContentWrapper from './ContentWrapper';
 
 export default function Categories({ onClose }: { onClose?: () => void }) {
 	return (
-		<div className="px-6 md:px-10">
+		<section>
 			<ContentWrapper>
 				<nav>
 					<ul className="grid h-min justify-items-center gap-4 md:grid-cols-3 md:gap-2.5 lg:gap-7.5">
@@ -14,7 +14,7 @@ export default function Categories({ onClose }: { onClose?: () => void }) {
 					</ul>
 				</nav>
 			</ContentWrapper>
-		</div>
+		</section>
 	);
 }
 

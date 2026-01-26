@@ -9,7 +9,7 @@ export default function CategoryProducts({ category }: { category: string }) {
 	);
 
 	return (
-		<section className="px-6 md:px-10">
+		<section>
 			<ContentWrapper>
 				{categoryProducts.length > 0 ? (
 					<ul className="flex flex-col gap-10 md:gap-24 lg:gap-30">

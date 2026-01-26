@@ -13,7 +13,7 @@ export default function Header() {
 
 	return (
 		<header
-			className="bg-dark-900 text-light-900 relative px-6 md:px-10"
+			className="bg-dark-900 text-light-900 relative"
 			style={{
 				backgroundColor:
 					pathname === '/' ? 'var(--color-dark-700)' : 'var(--color-dark-900)',

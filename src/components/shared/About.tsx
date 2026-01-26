@@ -2,7 +2,7 @@ import ContentWrapper from './ContentWrapper';
 
 export default function About() {
 	return (
-		<section className="px-6 md:px-10">
+		<section>
 			<ContentWrapper className="grid gap-10 md:gap-16 lg:grid-cols-[auto_33.75rem] lg:gap-31">
 				<picture>
 					<source

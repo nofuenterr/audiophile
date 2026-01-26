@@ -1,4 +1,5 @@
 import type { Product } from '../../types/product';
+import ContentWrapper from '../shared/ContentWrapper';
 
 type ProductDetailsType = Pick<
 	Product,
@@ -11,20 +12,25 @@ export default function ProductDetails({
 	productDetails: ProductDetailsType;
 }) {
 	return (
-		<section className="grid gap-10 md:gap-24 lg:gap-30">
-			<div className="grid gap-8 md:grid-cols-2 md:gap-17 lg:gap-30">
-				<ProductImage image={productDetails.image} name={productDetails.name} />
-				<ProductInfo
-					new={productDetails.new}
-					name={productDetails.name}
-					description={productDetails.description}
-					price={productDetails.price}
-				/>
-			</div>
-			<div className="grid gap-10 md:gap-24 lg:grid-cols-[1fr_21.875rem] lg:gap-30">
-				<ProductFeatures features={productDetails.features} />
-				<ProductItems includes={productDetails.includes} />
-			</div>
+		<section>
+			<ContentWrapper className="grid gap-16 md:gap-24 lg:gap-30">
+				<div className="grid gap-8 md:grid-cols-2 md:gap-17 lg:gap-30">
+					<ProductImage
+						image={productDetails.image}
+						name={productDetails.name}
+					/>
+					<ProductInfo
+						new={productDetails.new}
+						name={productDetails.name}
+						description={productDetails.description}
+						price={productDetails.price}
+					/>
+				</div>
+				<div className="grid gap-10 md:gap-24 lg:grid-cols-[1fr_21.875rem] lg:gap-30">
+					<ProductFeatures features={productDetails.features} />
+					<ProductItems includes={productDetails.includes} />
+				</div>
+			</ContentWrapper>
 		</section>
 	);
 }

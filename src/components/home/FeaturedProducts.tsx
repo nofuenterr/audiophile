@@ -8,7 +8,7 @@ export default function FeaturedProducts() {
 	const yx1Earphones = data[0];
 
 	return (
-		<section className="px-6 md:px-10">
+		<section>
 			<ContentWrapper className="grid gap-6 md:gap-8 lg:gap-12">
 				<div className="bg-primary isolate grid justify-items-center gap-8 overflow-hidden rounded-lg px-6 py-14 md:gap-16 md:px-41 md:pt-13 md:pb-16 lg:grid-cols-2 lg:items-start lg:gap-34 lg:px-24 lg:pt-33 lg:pb-31">
 					<div className="relative self-end lg:-mb-35">
