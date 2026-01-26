@@ -31,11 +31,12 @@ function Category({ category, onClose }: CategoryProps) {
 				onClick={onClose}
 				className="group grid justify-items-center"
 			>
-				<div>
+				<div className="h-26 lg:h-40">
 					<img
-						className="h-26 lg:h-40"
 						src={`/assets/shared/desktop/image-category-thumbnail-${category}.png`}
 						alt={`${category} category thumbnail`}
+						loading="lazy"
+						className="h-full w-full object-cover object-center"
 					/>
 				</div>
 				<h2 className="category lg:heading-6 mb-4">{category}</h2>

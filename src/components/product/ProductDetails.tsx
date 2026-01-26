@@ -39,14 +39,14 @@ type ProductImageType = Pick<ProductDetailsType, 'image' | 'name'>;
 
 function ProductImage({ image, name }: ProductImageType) {
 	return (
-		<div className="bg-light-700 max-h-82 w-full overflow-hidden rounded-lg md:max-h-120 md:min-w-60 lg:max-h-140 lg:min-w-70">
-			<picture>
+		<div className="bg-light-700 h-82 w-full overflow-hidden rounded-lg md:h-120 md:min-w-60 lg:h-140 lg:min-w-70">
+			<picture className="block h-full w-full">
 				<source media="(min-width: 1024px)" srcSet={image.desktop} />
 				<source media="(min-width: 768px)" srcSet={image.tablet} />
 				<img
 					src={image.mobile}
 					alt={`${name} image`}
-					className="m-auto h-full w-auto"
+					className="h-full w-full object-contain object-center"
 					loading="eager"
 				/>
 			</picture>

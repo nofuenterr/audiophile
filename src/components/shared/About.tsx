@@ -4,22 +4,24 @@ export default function About() {
 	return (
 		<section>
 			<ContentWrapper className="grid gap-10 md:gap-16 lg:grid-cols-[auto_33.75rem] lg:gap-31">
-				<picture>
-					<source
-						media="(min-width: 1024px)"
-						srcSet="/assets/shared/desktop/image-best-gear.jpg"
-					/>
-					<source
-						media="(min-width: 768px)"
-						srcSet="/assets/shared/tablet/image-best-gear.jpg"
-					/>
-					<img
-						src="/assets/shared/mobile/image-best-gear.jpg"
-						alt="Best audio gear"
-						className="h-75 w-full rounded-lg object-cover lg:col-start-2 lg:h-147"
-						loading="lazy"
-					/>
-				</picture>
+				<div className="h-75 overflow-hidden rounded-lg lg:h-147">
+					<picture className="block h-full w-full">
+						<source
+							media="(min-width: 1024px)"
+							srcSet="/assets/shared/desktop/image-best-gear.jpg"
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcSet="/assets/shared/tablet/image-best-gear.jpg"
+						/>
+						<img
+							src="/assets/shared/mobile/image-best-gear.jpg"
+							alt="Best audio gear"
+							className="h-full w-full object-cover object-center lg:col-start-2"
+							loading="lazy"
+						/>
+					</picture>
+				</div>
 
 				<div className="grid gap-8 text-center text-balance lg:row-start-1 lg:content-center lg:justify-items-start lg:text-start">
 					<h2 className="heading text-[1.75rem] leading-9.5 tracking-[2px] md:text-[2.5rem] md:leading-11 md:tracking-[1.5px]">
