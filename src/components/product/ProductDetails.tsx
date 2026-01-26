@@ -1,4 +1,5 @@
 import type { Product } from '../../types/product';
+import formatPrice from '../../utils/formatPrice';
 import ContentWrapper from '../shared/ContentWrapper';
 
 type ProductDetailsType = Pick<
@@ -74,7 +75,7 @@ function ProductInfo({
 				{name}
 			</h1>
 			<p className="mb-6 opacity-50 md:mb-8">{description}</p>
-			<p className="heading heading-6 mb-8 lg:mb-12">$ {price}</p>
+			<p className="heading heading-6 mb-8 lg:mb-12">$ {formatPrice(price)}</p>
 			<div className="flex flex-wrap items-center gap-4">
 				<div className="bg-light-700 flex w-30 items-center gap-5 p-4">
 					<button className="subtitle hover:text-primary grid size-4 cursor-pointer place-content-center opacity-25 hover:opacity-100">
