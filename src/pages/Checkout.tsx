@@ -3,6 +3,7 @@ import GoBackButton from '../components/shared/GoBackButton';
 import MainWrapper from '../components/shared/MainWrapper';
 import ContentWrapper from '../components/shared/ContentWrapper';
 import clsx from 'clsx';
+import CheckoutModal from '../components/checkout/CheckoutModal';
 
 export default function Checkout() {
 	return (
@@ -18,6 +19,8 @@ export default function Checkout() {
 					</CheckoutPageContentWrapper>
 				</ContentWrapper>
 			</MainWrapper>
+
+			<CheckoutModal />
 		</div>
 	);
 }
