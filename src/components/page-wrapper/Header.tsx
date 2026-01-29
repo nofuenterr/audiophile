@@ -5,8 +5,8 @@ import brandLogo from '../../assets/icons/logo.svg';
 import cartIcon from '../../assets/icons/icon-cart.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import Categories from '../shared/Categories';
 import CartModal from '../cart/CartModal';
+import MenuModal from './MenuModal';
 
 export default function Header() {
 	const [menu, setMenu] = useState<boolean>(false);
@@ -14,24 +14,24 @@ export default function Header() {
 
 	return (
 		<header
-			className="bg-dark-900 text-light-900 relative max-h-22.5"
+			className="bg-dark-900 text-light-900 relative"
 			style={{
 				backgroundColor:
 					pathname === '/' ? 'var(--color-dark-700)' : 'var(--color-dark-900)',
 			}}
 		>
 			<ContentWrapper className="border-b-gray/20 flex items-center justify-between gap-10.5 border-b py-8 md:justify-start lg:justify-between lg:py-9">
-				<button
-					className="cursor-pointer lg:hidden"
-					onClick={() => setMenu((s) => !s)}
-					type="button"
-				>
-					<AccessibleIcon.Root label="Menu">
-						<img src={hamburgerIcon} alt="" />
-					</AccessibleIcon.Root>
-				</button>
-
-				{menu && <Menu onClose={() => setMenu(false)} />}
+				<MenuModal onClose={() => setMenu(false)} menu={menu}>
+					<button
+						className="cursor-pointer lg:hidden"
+						onClick={() => setMenu(true)}
+						type="button"
+					>
+						<AccessibleIcon.Root label="Menu">
+							<img src={hamburgerIcon} alt="" />
+						</AccessibleIcon.Root>
+					</button>
+				</MenuModal>
 
 				<Link to={'/'} onClick={() => setMenu(false)}>
 					<img src={brandLogo} alt="Brand logo" />
@@ -84,19 +84,5 @@ export default function Header() {
 				</CartModal>
 			</ContentWrapper>
 		</header>
-	);
-}
-
-function Menu({ onClose }: { onClose: () => void }) {
-	return (
-		<>
-			<div
-				onClick={onClose}
-				className="bg-dark-900/40 absolute inset-x-0 inset-y-full z-40 h-dvh lg:hidden"
-			/>
-			<div className="bg-light-900 text-dark-900 absolute inset-x-0 inset-y-full isolate z-50 h-min overflow-hidden rounded-br-lg rounded-bl-lg pt-8 pb-9 md:pt-14 md:pb-17 lg:hidden">
-				<Categories onClose={onClose} />
-			</div>
-		</>
 	);
 }
