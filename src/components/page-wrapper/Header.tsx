@@ -6,6 +6,7 @@ import cartIcon from '../../assets/icons/icon-cart.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Categories from '../shared/Categories';
+import CartModal from '../cart/CartModal';
 
 export default function Header() {
 	const [menu, setMenu] = useState<boolean>(false);
@@ -13,7 +14,7 @@ export default function Header() {
 
 	return (
 		<header
-			className="bg-dark-900 text-light-900 relative"
+			className="bg-dark-900 text-light-900 relative max-h-22.5"
 			style={{
 				backgroundColor:
 					pathname === '/' ? 'var(--color-dark-700)' : 'var(--color-dark-900)',
@@ -70,15 +71,17 @@ export default function Header() {
 					</ul>
 				</nav>
 
-				<button
-					className="cursor-pointer md:ml-auto lg:ml-0"
-					type="button"
-					onClick={() => setMenu(false)}
-				>
-					<AccessibleIcon.Root label="Cart">
-						<img src={cartIcon} alt="" />
-					</AccessibleIcon.Root>
-				</button>
+				<CartModal>
+					<button
+						className="cursor-pointer md:ml-auto lg:ml-0"
+						type="button"
+						onClick={() => setMenu(false)}
+					>
+						<AccessibleIcon.Root label="Cart">
+							<img src={cartIcon} alt="" />
+						</AccessibleIcon.Root>
+					</button>
+				</CartModal>
 			</ContentWrapper>
 		</header>
 	);
