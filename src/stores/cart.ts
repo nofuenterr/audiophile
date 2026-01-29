@@ -12,6 +12,7 @@ export interface CartState {
 	addProduct: (product: Product, quantity: number) => void;
 	editProduct: (slug: string, quantity: number) => void;
 	deleteProduct: (slug: string) => void;
+	removeAllProducts: () => void;
 }
 
 export const useCartStore = create<CartState>()(
@@ -20,15 +21,24 @@ export const useCartStore = create<CartState>()(
 			cart: [],
 			addProduct: (product: Product, quantity: number) =>
 				set((state) => {
-					state.cart.push({
-						...product,
-						quantity,
-					});
+					const cartProduct = state.cart.find(
+						(p: CartProduct) => p.slug === product.slug
+					);
+					if (cartProduct) {
+						Object.assign(cartProduct, {
+							quantity: cartProduct.quantity + quantity,
+						});
+					} else {
+						state.cart.push({
+							...product,
+							quantity,
+						});
+					}
 				}),
 			editProduct: (slug: string, quantity: number) =>
 				set((state) => {
 					const product = state.cart.find((p: CartProduct) => p.slug === slug);
-					if (product) Object.assign(product, quantity);
+					if (product) Object.assign(product, { quantity });
 				}),
 			deleteProduct: (slug: string) => {
 				const product = get().cart.find((p: CartProduct) => p.slug === slug);
@@ -38,6 +48,7 @@ export const useCartStore = create<CartState>()(
 					state.cart = state.cart.filter((p: CartProduct) => p.slug !== slug);
 				});
 			},
+			removeAllProducts: () => set({ cart: [] }),
 		})),
 		{
 			name: 'cart-storage',

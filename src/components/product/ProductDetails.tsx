@@ -2,42 +2,26 @@ import { useState } from 'react';
 import type { Product } from '../../types/product';
 import formatPrice from '../../utils/formatPrice';
 import ContentWrapper from '../shared/ContentWrapper';
+import { useCartStore } from '../../stores/cart';
 
-type ProductDetailsType = Pick<
-	Product,
-	'image' | 'new' | 'name' | 'description' | 'price' | 'features' | 'includes'
->;
-
-export default function ProductDetails({
-	productDetails,
-}: {
-	productDetails: ProductDetailsType;
-}) {
+export default function ProductDetails({ product }: { product: Product }) {
 	return (
 		<section>
 			<ContentWrapper className="grid gap-16 md:gap-24 lg:gap-30">
 				<div className="grid gap-8 md:grid-cols-2 md:gap-17 lg:gap-30">
-					<ProductImage
-						image={productDetails.image}
-						name={productDetails.name}
-					/>
-					<ProductInfo
-						new={productDetails.new}
-						name={productDetails.name}
-						description={productDetails.description}
-						price={productDetails.price}
-					/>
+					<ProductImage image={product.image} name={product.name} />
+					<ProductInfo product={product} />
 				</div>
 				<div className="grid gap-10 md:gap-24 lg:grid-cols-[1fr_21.875rem] lg:gap-30">
-					<ProductFeatures features={productDetails.features} />
-					<ProductItems includes={productDetails.includes} />
+					<ProductFeatures features={product.features} />
+					<ProductItems includes={product.includes} />
 				</div>
 			</ContentWrapper>
 		</section>
 	);
 }
 
-type ProductImageType = Pick<ProductDetailsType, 'image' | 'name'>;
+type ProductImageType = Pick<Product, 'image' | 'name'>;
 
 function ProductImage({ image, name }: ProductImageType) {
 	return (
@@ -56,29 +40,22 @@ function ProductImage({ image, name }: ProductImageType) {
 	);
 }
 
-type ProductInfoType = Pick<
-	ProductDetailsType,
-	'new' | 'name' | 'description' | 'price'
->;
-
-function ProductInfo({
-	new: isNew,
-	name,
-	description,
-	price,
-}: ProductInfoType) {
+function ProductInfo({ product }: { product: Product }) {
 	const [quantity, setQuantity] = useState<number>(1);
+	const addProduct = useCartStore((s) => s.addProduct);
 
 	return (
 		<div className="md:self-center">
-			{isNew ? (
+			{product.new ? (
 				<p className="text-primary text-overline mb-6 md:mb-4">New Product</p>
 			) : null}
 			<h1 className="heading mb-6 text-[1.75rem] leading-9.5 tracking-[2px] md:mb-8 lg:text-[2.5rem] lg:leading-11 lg:tracking-[1.5px]">
-				{name}
+				{product.name}
 			</h1>
-			<p className="mb-6 opacity-50 md:mb-8">{description}</p>
-			<p className="heading heading-6 mb-8 lg:mb-12">$ {formatPrice(price)}</p>
+			<p className="mb-6 opacity-50 md:mb-8">{product.description}</p>
+			<p className="heading heading-6 mb-8 lg:mb-12">
+				$ {formatPrice(product.price)}
+			</p>
 			<div className="flex flex-wrap items-center gap-4">
 				<div className="bg-light-700 flex w-30 items-center gap-5 p-4">
 					{quantity > 1 ? (
@@ -118,7 +95,10 @@ function ProductInfo({
 						+
 					</button>
 				</div>
-				<button className="bg-primary hover:bg-primary-hover text-light-900 subtitle cursor-pointer px-8 py-4">
+				<button
+					className="bg-primary hover:bg-primary-hover text-light-900 subtitle cursor-pointer px-8 py-4"
+					onClick={() => addProduct(product, quantity)}
+				>
 					Add to cart
 				</button>
 			</div>
@@ -126,7 +106,7 @@ function ProductInfo({
 	);
 }
 
-type ProductFeaturesType = Pick<ProductDetailsType, 'features'>;
+type ProductFeaturesType = Pick<Product, 'features'>;
 
 function ProductFeatures({ features }: ProductFeaturesType) {
 	return (
@@ -139,7 +119,7 @@ function ProductFeatures({ features }: ProductFeaturesType) {
 	);
 }
 
-type ProductItemsType = Pick<ProductDetailsType, 'includes'>;
+type ProductItemsType = Pick<Product, 'includes'>;
 
 function ProductItems({ includes: items }: ProductItemsType) {
 	return (

@@ -22,17 +22,7 @@ export default function Product() {
 			<MainWrapper>
 				{product ? (
 					<>
-						<ProductDetails
-							productDetails={{
-								image: product.image,
-								new: product.new,
-								name: product.name,
-								description: product.description,
-								price: product.price,
-								features: product.features,
-								includes: product.includes,
-							}}
-						/>
+						<ProductDetails product={product} />
 						<Gallery gallery={product.gallery} name={product.name} />
 						<Recommendations others={product.others} name={product.name} />
 					</>
