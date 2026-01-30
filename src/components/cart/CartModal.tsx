@@ -3,15 +3,10 @@ import type { ReactNode } from 'react';
 import { useCartStore, type CartProduct } from '../../stores/cart';
 import formatPrice from '../../utils/formatPrice';
 import { Link } from 'react-router-dom';
+import { getCartTotal } from '../../utils/getCartTotal';
 
 export default function CartModal({ children }: { children: ReactNode }) {
 	const cart = useCartStore((s) => s.cart);
-
-	function calculateTotal(cart: CartProduct[]): number {
-		return cart.reduce((total, product) => {
-			return (total += product.price * product.quantity);
-		}, 0);
-	}
 
 	return (
 		<Dialog.Root>
@@ -41,7 +36,7 @@ export default function CartModal({ children }: { children: ReactNode }) {
 							<div className="mb-6 flex items-center justify-between">
 								<h2 className="uppercase opacity-50">Total</h2>
 								<p className="heading heading-6">
-									$ {formatPrice(calculateTotal(cart))}
+									$ {formatPrice(getCartTotal(cart))}
 								</p>
 							</div>
 						</>

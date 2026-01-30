@@ -3,7 +3,10 @@ import GoBackButton from '../components/shared/GoBackButton';
 import MainWrapper from '../components/shared/MainWrapper';
 import ContentWrapper from '../components/shared/ContentWrapper';
 import clsx from 'clsx';
-import CheckoutModal from '../components/checkout/CheckoutModal';
+/* import CheckoutModal from '../components/checkout/CheckoutModal'; */
+import { useCartStore } from '../stores/cart';
+import formatPrice from '../utils/formatPrice';
+import { getCartTotal } from '../utils/getCartTotal';
 
 export default function Checkout() {
 	return (
@@ -20,28 +23,45 @@ export default function Checkout() {
 				</ContentWrapper>
 			</MainWrapper>
 
-			<CheckoutModal />
+			{/* <CheckoutModal /> */}
 		</div>
 	);
 }
 
 function Summary() {
+	const cart = useCartStore((s) => s.cart);
+	const total = getCartTotal(cart);
+	const SHIPPING: number = 50;
+	const vat = total * 0.2;
+	const grandTotal = total + SHIPPING + vat;
+
 	return (
 		<div className="grid content-start gap-8">
 			<h2 className="heading heading-6">Summary</h2>
 			<div>
-				<ul>
-					<li className="grid grid-cols-[4rem_1fr] gap-4">
-						<div className="bg-light-700 size-16 overflow-hidden rounded-lg"></div>
+				<ul className="grid gap-6">
+					{cart.map((product) => {
+						return (
+							<li
+								key={product.slug}
+								className="grid grid-cols-[4rem_1fr] gap-4"
+							>
+								<div className="bg-light-700 size-16 overflow-hidden rounded-lg">
+									<img src={product.cartImage} alt={`${product.name} image`} />
+								</div>
 
-						<div className="flex w-full justify-between self-center">
-							<div className="">
-								<p className="font-bold">XX99 MK II</p>
-								<p className="input opacity-50">$ 2,999</p>
-							</div>
-							<p className="opacity-50">x1</p>
-						</div>
-					</li>
+								<div className="flex w-full justify-between self-center">
+									<div className="">
+										<p className="font-bold">{product.name}</p>
+										<p className="input opacity-50">
+											$ {formatPrice(product.price)}
+										</p>
+									</div>
+									<p className="opacity-50">x{product.quantity}</p>
+								</div>
+							</li>
+						);
+					})}
 				</ul>
 			</div>
 
@@ -49,21 +69,25 @@ function Summary() {
 				<div className="grid content-start gap-2">
 					<div className="flex items-center justify-between">
 						<p className="uppercase opacity-50">Total</p>
-						<p className="heading text-lg">$ 5,396</p>
+						<p className="heading text-end text-lg">$ {formatPrice(total)}</p>
 					</div>
 					<div className="flex items-center justify-between">
 						<p className="uppercase opacity-50">Shipping</p>
-						<p className="heading text-lg">$ 50</p>
+						<p className="heading text-end text-lg">
+							$ {formatPrice(SHIPPING)}
+						</p>
 					</div>
 					<div className="flex items-center justify-between">
 						<p className="uppercase opacity-50">VAT (Included)</p>
-						<p className="heading text-lg">$ 1,079</p>
+						<p className="heading text-end text-lg">$ {formatPrice(vat)}</p>
 					</div>
 				</div>
 
 				<div className="flex items-center justify-between">
 					<p className="uppercase opacity-50">Grand Total</p>
-					<p className="heading text-primary text-lg">$ 5,446</p>
+					<p className="heading text-primary text-end text-lg">
+						$ {formatPrice(grandTotal)}
+					</p>
 				</div>
 			</div>
 

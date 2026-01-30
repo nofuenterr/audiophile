@@ -2,7 +2,7 @@ import { Dialog } from 'radix-ui';
 
 export default function CheckoutModal() {
 	return (
-		<Dialog.Root open>
+		<Dialog.Root>
 			<Dialog.Trigger asChild>
 				<button className="Button violet">Edit profile</button>
 			</Dialog.Trigger>
