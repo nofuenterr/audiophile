@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Product } from '../../types/product';
 import formatPrice from '../../utils/formatPrice';
 import ContentWrapper from '../shared/ContentWrapper';
 import { useCartStore } from '../../stores/cart';
+import CartToast from './CartToast';
 
 export default function ProductDetails({ product }: { product: Product }) {
 	return (
@@ -43,6 +44,13 @@ function ProductImage({ image, name }: ProductImageType) {
 function ProductInfo({ product }: { product: Product }) {
 	const [quantity, setQuantity] = useState<number>(1);
 	const addProduct = useCartStore((s) => s.addProduct);
+
+	const [open, setOpen] = useState(false);
+	const timerRef = useRef(0);
+
+	useEffect(() => {
+		return () => clearTimeout(timerRef.current);
+	}, []);
 
 	return (
 		<div className="md:self-center">
@@ -95,12 +103,27 @@ function ProductInfo({ product }: { product: Product }) {
 						+
 					</button>
 				</div>
-				<button
-					className="bg-primary hover:bg-primary-hover text-light-900 subtitle cursor-pointer px-8 py-4"
-					onClick={() => addProduct(product, quantity)}
+
+				<CartToast
+					product={product}
+					quantity={quantity}
+					open={open}
+					setOpen={setOpen}
 				>
-					Add to cart
-				</button>
+					<button
+						className="bg-primary hover:bg-primary-hover text-light-900 subtitle cursor-pointer px-8 py-4"
+						onClick={() => {
+							addProduct(product, quantity);
+							setOpen(false);
+							window.clearTimeout(timerRef.current);
+							timerRef.current = window.setTimeout(() => {
+								setOpen(true);
+							}, 100);
+						}}
+					>
+						Add to cart
+					</button>
+				</CartToast>
 			</div>
 		</div>
 	);
