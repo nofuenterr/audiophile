@@ -104,7 +104,7 @@ export default function CheckoutModal({
 											<div className="justify-self-center">
 												<button
 													onClick={() => setOtherItems(true)}
-													className="label cursor-pointer opacity-50"
+													className="label hover:text-primary cursor-pointer opacity-50 hover:opacity-100"
 												>
 													and {latestOrder.items.length - 1} other item
 													{latestOrder.items.length > 2 ? '(s)' : ''}
@@ -116,7 +116,7 @@ export default function CheckoutModal({
 											<div className="justify-self-center">
 												<button
 													onClick={() => setOtherItems(false)}
-													className="label cursor-pointer opacity-50"
+													className="label hover:text-primary cursor-pointer opacity-50 hover:opacity-100"
 												>
 													View less
 												</button>
