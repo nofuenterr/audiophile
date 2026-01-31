@@ -351,7 +351,7 @@ function RadioBlock({ defaultChecked, name, id, label }: RadioBlockProps) {
 	const { register } = useFormContext();
 
 	return (
-		<div className="input border-input-border flex w-full items-center gap-4 rounded-lg border px-6 py-5">
+		<label className="input border-input-border flex w-full cursor-pointer items-center gap-4 rounded-lg border px-6 py-5">
 			<input
 				defaultChecked={defaultChecked}
 				{...register(name)}
@@ -359,9 +359,9 @@ function RadioBlock({ defaultChecked, name, id, label }: RadioBlockProps) {
 				type="radio"
 				name={name}
 				id={id}
-				className="border-input-border checked:bg-primary size-5 appearance-none rounded-full border p-1.25"
+				className="border-input-border checked:bg-primary size-5 cursor-pointer appearance-none rounded-full border p-1.25"
 			/>
-			<label htmlFor={id}>{label}</label>
-		</div>
+			<span>{label}</span>
+		</label>
 	);
 }
