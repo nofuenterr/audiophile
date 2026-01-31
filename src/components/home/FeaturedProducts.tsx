@@ -23,7 +23,7 @@ export default function FeaturedProducts() {
 							/>
 							<img
 								src="/assets/home/mobile/image-speaker-zx9.png"
-								alt={`${zx9Speaker.name} image`}
+								alt={zx9Speaker.name}
 								className="h-full w-full object-fill object-center"
 								loading="lazy"
 							/>
@@ -73,7 +73,7 @@ export default function FeaturedProducts() {
 							/>
 							<img
 								src="/assets/home/mobile/image-earphones-yx1.jpg"
-								alt={`${yx1Earphones.name} image`}
+								alt={yx1Earphones.name}
 								className="bg-light-700 size-full object-cover object-center"
 								loading="lazy"
 							/>

@@ -70,10 +70,7 @@ export default function CheckoutModal({
 													}}
 												>
 													<div className="size-12.5 bg-transparent">
-														<img
-															src={item.cartImage}
-															alt={`${item.name} image`}
-														/>
+														<img src={item.cartImage} alt={item.name} />
 													</div>
 
 													<div className="flex w-full justify-between gap-3 self-center">

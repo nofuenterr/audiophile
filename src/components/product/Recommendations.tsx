@@ -33,7 +33,7 @@ export default function Recommendations({
 										/>
 										<img
 											src={rec.image.mobile}
-											alt={`${name} image`}
+											alt={name}
 											className="h-full w-full object-contain object-center"
 											loading="eager"
 										/>

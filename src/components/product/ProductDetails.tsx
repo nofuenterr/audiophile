@@ -32,7 +32,7 @@ function ProductImage({ image, name }: ProductImageType) {
 				<source media="(min-width: 768px)" srcSet={image.tablet} />
 				<img
 					src={image.mobile}
-					alt={`${name} image`}
+					alt={name}
 					className="h-full w-full object-contain object-center"
 					loading="eager"
 				/>

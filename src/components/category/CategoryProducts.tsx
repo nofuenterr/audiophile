@@ -46,7 +46,7 @@ function ProductCard({ product }: ProductCardProps) {
 					/>
 					<img
 						src={product.categoryImage.mobile}
-						alt={`${product.name} image`}
+						alt={product.name}
 						className="h-full w-full object-contain object-center"
 						loading="eager"
 					/>

@@ -88,11 +88,7 @@ function CartProductCard({ product }: { product: CartProduct }) {
 	return (
 		<li className="grid grid-cols-[auto_1fr] gap-4">
 			<div className="bg-light-700 size-16 overflow-hidden rounded-lg">
-				<img
-					src={product.cartImage}
-					loading="lazy"
-					alt={`${product.name} image`}
-				/>
+				<img src={product.cartImage} loading="lazy" alt={product.name} />
 			</div>
 
 			<div className="grid grid-cols-[1fr_6rem] justify-between gap-3 self-center [@media(max-width:25rem)]:grid-cols-[1fr_4rem]">

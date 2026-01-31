@@ -51,10 +51,7 @@ function Summary() {
 										className="grid grid-cols-[4rem_1fr] gap-4"
 									>
 										<div className="bg-light-700 size-16 overflow-hidden rounded-lg">
-											<img
-												src={product.cartImage}
-												alt={`${product.name} image`}
-											/>
+											<img src={product.cartImage} alt={product.name} />
 										</div>
 
 										<div className="flex w-full justify-between self-center">
