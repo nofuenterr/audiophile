@@ -27,20 +27,28 @@ export default function CheckoutModal({
 			<Dialog.Portal>
 				<Dialog.Overlay className="bg-dark-900/40 fixed inset-0 grid place-items-center overflow-y-auto py-8 duration-150">
 					<Dialog.Content className="bg-light-900 text-dark-900 w-[85vw] max-w-135 rounded-lg p-8 duration-150">
-						<div className="bg-primary mb-6 grid size-16 place-content-center rounded-full md:mb-8">
-							<svg
-								width={26}
-								height={21}
-								viewBox="0 0 26 21"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
+						<div className="flex items-start justify-between">
+							<div className="bg-primary mb-6 grid size-16 place-content-center rounded-full md:mb-8">
+								<svg
+									width={26}
+									height={21}
+									viewBox="0 0 26 21"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M1.414 10.466l6.752 6.751L23.969 1.414"
+										className="stroke-light-900"
+										strokeWidth={4}
+									/>
+								</svg>
+							</div>
+							<Dialog.Close
+								aria-label="Close"
+								className="hover:text-primary cursor-pointer opacity-50 hover:opacity-100"
 							>
-								<path
-									d="M1.414 10.466l6.752 6.751L23.969 1.414"
-									className="stroke-light-900"
-									strokeWidth={4}
-								/>
-							</svg>
+								✕
+							</Dialog.Close>
 						</div>
 
 						<Dialog.Title className="heading mb-4 text-2xl leading-8.25 tracking-[1.7px] md:mb-7 md:text-[2rem] md:leading-9 md:tracking-[1.15px]">

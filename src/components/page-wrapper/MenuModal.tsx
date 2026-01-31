@@ -1,6 +1,7 @@
 import { Dialog, VisuallyHidden } from 'radix-ui';
 import type { ReactNode } from 'react';
 import Categories from '../shared/Categories';
+import ContentWrapper from '../shared/ContentWrapper';
 
 interface MenuModalProps {
 	onClose: () => void;
@@ -20,6 +21,14 @@ export default function MenuModal({ onClose, menu, children }: MenuModalProps) {
 					</VisuallyHidden.Root>
 
 					<Dialog.Content className="bg-light-900 text-dark-900 isolate z-50 w-full rounded-br-lg rounded-bl-lg pt-8 pb-9 md:pt-14 md:pb-17">
+						<ContentWrapper className="mb-4 w-full text-end">
+							<Dialog.Close
+								aria-label="Close"
+								className="hover:text-primary cursor-pointer opacity-50 hover:opacity-100"
+							>
+								✕
+							</Dialog.Close>
+						</ContentWrapper>
 						<Categories onClose={onClose} />
 					</Dialog.Content>
 				</Dialog.Overlay>

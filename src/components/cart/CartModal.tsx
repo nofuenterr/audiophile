@@ -14,7 +14,14 @@ export default function CartModal({ children }: { children: ReactNode }) {
 
 			<Dialog.Portal>
 				<Dialog.Overlay className="bg-dark-900/40 fixed inset-0 grid content-start justify-end overflow-y-auto pt-28.5 pr-6 pb-8 duration-150 md:pr-10 lg:pt-30.5 [@media(min-width:65.625rem)]:pr-[calc((100vw-70.3125rem)/2+2.34375rem)]">
-					<Dialog.Content className="bg-light-900 text-dark-900 w-[min(calc(100vw-3rem),23.75rem)] rounded-lg p-8 duration-150 [@media(max-width:25rem)]:p-6">
+					<Dialog.Content className="bg-light-900 text-dark-900 grid w-[min(calc(100vw-3rem),23.75rem)] rounded-lg p-8 duration-150 [@media(max-width:25rem)]:p-6">
+						<Dialog.Close
+							aria-label="Close"
+							className="hover:text-primary mb-4 cursor-pointer justify-self-end opacity-50 hover:opacity-100"
+						>
+							✕
+						</Dialog.Close>
+
 						<div className="mb-8 flex items-center justify-between">
 							<Dialog.Title className="heading heading-6">
 								CART ({cart.length})
