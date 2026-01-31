@@ -29,7 +29,10 @@ export default function CartToast({
 			>
 				<div className="flex items-center justify-between">
 					<Toast.Title className="heading heading-6">Added to cart</Toast.Title>
-					<Toast.Close aria-label="Close" className="cursor-pointer">
+					<Toast.Close
+						aria-label="Close"
+						className="hover:text-primary cursor-pointer opacity-50 hover:opacity-100"
+					>
 						✕
 					</Toast.Close>
 				</div>
