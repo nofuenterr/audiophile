@@ -7,9 +7,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import CartModal from '../cart/CartModal';
 import MenuModal from './MenuModal';
+import { useCartStore } from '../../stores/cart';
 
 export default function Header() {
 	const [menu, setMenu] = useState<boolean>(false);
+	const cart = useCartStore((s) => s.cart);
 	const { pathname } = useLocation();
 
 	return (
@@ -73,10 +75,16 @@ export default function Header() {
 
 				<CartModal>
 					<button
-						className="cursor-pointer md:ml-auto lg:ml-0"
+						className="relative cursor-pointer md:ml-auto lg:ml-0"
 						type="button"
 						onClick={() => setMenu(false)}
 					>
+						<div
+							aria-label="Cart items count"
+							className="bg-red absolute -top-3.25 -right-3.25 grid size-6 place-content-center rounded-full text-sm"
+						>
+							{cart.length}
+						</div>
 						<AccessibleIcon.Root label="Cart">
 							<img src={cartIcon} alt="" />
 						</AccessibleIcon.Root>
