@@ -33,8 +33,8 @@ interface ProductCardProps {
 
 function ProductCard({ product }: ProductCardProps) {
 	return (
-		<li className="grid gap-8 lg:grid-cols-[auto_auto] lg:gap-31 lg:even:*:last:col-start-1 lg:even:*:last:row-start-1">
-			<div className="bg-light-700 h-88 w-full overflow-hidden rounded-lg lg:h-140 lg:max-w-135">
+		<li className="grid gap-8 lg:flex lg:items-center lg:gap-31 lg:even:flex-row-reverse">
+			<div className="bg-light-700 h-88 w-full overflow-hidden rounded-lg lg:h-140 lg:w-135">
 				<picture className="block h-full w-full">
 					<source
 						media="(min-width: 1024px)"
@@ -48,7 +48,7 @@ function ProductCard({ product }: ProductCardProps) {
 						src={product.categoryImage.mobile}
 						alt={`${product.name} image`}
 						className="h-full w-full object-contain object-center"
-						loading="lazy"
+						loading="eager"
 					/>
 				</picture>
 			</div>
