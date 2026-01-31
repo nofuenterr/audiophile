@@ -14,14 +14,15 @@ export default function MenuModal({ onClose, menu, children }: MenuModalProps) {
 			<Dialog.Trigger asChild>{children}</Dialog.Trigger>
 
 			<Dialog.Portal>
-				<Dialog.Overlay className="bg-dark-900/40 fixed inset-0 duration-150" />
-				<VisuallyHidden.Root>
-					<Dialog.Title>Menu</Dialog.Title>
-				</VisuallyHidden.Root>
+				<Dialog.Overlay className="bg-dark-900/40 fixed inset-0 grid content-start overflow-y-auto pb-8 duration-150">
+					<VisuallyHidden.Root>
+						<Dialog.Title>Menu</Dialog.Title>
+					</VisuallyHidden.Root>
 
-				<Dialog.Content className="bg-light-900 text-dark-900 fixed top-22.5 left-0 isolate z-50 w-full rounded-br-lg rounded-bl-lg pt-8 pb-9 md:pt-14 md:pb-17">
-					<Categories onClose={onClose} />
-				</Dialog.Content>
+					<Dialog.Content className="bg-light-900 text-dark-900 isolate z-50 w-full rounded-br-lg rounded-bl-lg pt-8 pb-9 md:pt-14 md:pb-17">
+						<Categories onClose={onClose} />
+					</Dialog.Content>
+				</Dialog.Overlay>
 			</Dialog.Portal>
 		</Dialog.Root>
 	);

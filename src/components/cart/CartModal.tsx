@@ -13,57 +13,57 @@ export default function CartModal({ children }: { children: ReactNode }) {
 			<Dialog.Trigger asChild>{children}</Dialog.Trigger>
 
 			<Dialog.Portal>
-				<Dialog.Overlay className="bg-dark-900 fixed inset-0 opacity-40 duration-150" />
-
-				<Dialog.Content className="bg-light-900 text-dark-900 fixed top-28.5 right-6 w-[min(calc(100vw-3rem),23.75rem)] rounded-lg p-8 duration-150 md:right-10 lg:top-30.5 [@media(max-width:25rem)]:p-6 [@media(min-width:65.625rem)]:right-[calc((100vw-70.3125rem)/2+2.34375rem)]">
-					<div className="mb-8 flex items-center justify-between">
-						<Dialog.Title className="heading heading-6">
-							CART ({cart.length})
-						</Dialog.Title>
-						{cart.length > 0 ? <RemoveAllButton /> : null}
-					</div>
-
-					{cart.length > 0 ? (
-						<>
-							<ul className="mb-8 grid gap-6">
-								{cart.map((product) => {
-									return (
-										<CartProductCard key={product.slug} product={product} />
-									);
-								})}
-							</ul>
-
-							<div className="mb-6 flex items-center justify-between">
-								<h2 className="uppercase opacity-50">Total</h2>
-								<p className="heading heading-6">
-									$ {formatPrice(getCartTotal(cart))}
-								</p>
-							</div>
-						</>
-					) : (
-						<div className="mb-8">
-							<p className="text-center">Your cart is currently empty.</p>
+				<Dialog.Overlay className="bg-dark-900/40 fixed inset-0 grid content-start justify-end overflow-y-auto pt-28.5 pr-6 pb-8 duration-150 md:pr-10 lg:pt-30.5 [@media(min-width:65.625rem)]:pr-[calc((100vw-70.3125rem)/2+2.34375rem)]">
+					<Dialog.Content className="bg-light-900 text-dark-900 w-[min(calc(100vw-3rem),23.75rem)] rounded-lg p-8 duration-150 [@media(max-width:25rem)]:p-6">
+						<div className="mb-8 flex items-center justify-between">
+							<Dialog.Title className="heading heading-6">
+								CART ({cart.length})
+							</Dialog.Title>
+							{cart.length > 0 ? <RemoveAllButton /> : null}
 						</div>
-					)}
 
-					<Dialog.Close asChild>
 						{cart.length > 0 ? (
-							<Link
-								to={'/checkout'}
-								className="bg-primary hover:bg-primary-hover text-light-900 subtitle block w-full cursor-pointer px-8 py-4 text-center"
-							>
-								Checkout
-							</Link>
+							<>
+								<ul className="mb-8 grid gap-6">
+									{cart.map((product) => {
+										return (
+											<CartProductCard key={product.slug} product={product} />
+										);
+									})}
+								</ul>
+
+								<div className="mb-6 flex items-center justify-between">
+									<h2 className="uppercase opacity-50">Total</h2>
+									<p className="heading heading-6">
+										$ {formatPrice(getCartTotal(cart))}
+									</p>
+								</div>
+							</>
 						) : (
-							<button
-								className="bg-primary hover:bg-primary-hover text-light-900 subtitle w-full cursor-pointer px-8 py-4"
-								aria-label="Continue shopping"
-							>
-								Continue shopping
-							</button>
+							<div className="mb-8">
+								<p className="text-center">Your cart is currently empty.</p>
+							</div>
 						)}
-					</Dialog.Close>
-				</Dialog.Content>
+
+						<Dialog.Close asChild>
+							{cart.length > 0 ? (
+								<Link
+									to={'/checkout'}
+									className="bg-primary hover:bg-primary-hover text-light-900 subtitle block w-full cursor-pointer px-8 py-4 text-center"
+								>
+									Checkout
+								</Link>
+							) : (
+								<button
+									className="bg-primary hover:bg-primary-hover text-light-900 subtitle w-full cursor-pointer px-8 py-4"
+									aria-label="Continue shopping"
+								>
+									Continue shopping
+								</button>
+							)}
+						</Dialog.Close>
+					</Dialog.Content>
+				</Dialog.Overlay>
 			</Dialog.Portal>
 		</Dialog.Root>
 	);
