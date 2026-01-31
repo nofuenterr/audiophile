@@ -10,6 +10,9 @@ export default function PageWrapper() {
 	const form = useForm({
 		resolver: zodResolver(checkoutFormSchema),
 		mode: 'onChange',
+		defaultValues: {
+			paymentMethod: 'eMoney',
+		},
 	});
 
 	return (
