@@ -1,9 +1,9 @@
-import CategoryName from '../components/category/CategoryName';
-import CategoryProducts from '../components/category/CategoryProducts';
-import Categories from '../components/shared/Categories';
-import About from '../components/shared/About';
+import CategoryName from './CategoryName';
+import CategoryProducts from './CategoryProducts';
+import Categories from '../../components/sections/Categories';
+import About from '../../components/sections/About';
 import { useParams } from 'react-router-dom';
-import MainWrapper from '../components/shared/MainWrapper';
+import MainWrapper from '../../components/wrappers/MainWrapper';
 
 export default function Category() {
 	const params = useParams();

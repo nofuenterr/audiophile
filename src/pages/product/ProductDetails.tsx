@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Product } from '../../types/product';
 import formatPrice from '../../utils/formatPrice';
-import ContentWrapper from '../shared/ContentWrapper';
-import { useCartStore } from '../../stores/cart';
+import ContentWrapper from '../../components/wrappers/ContentWrapper';
+import { useCartStore } from '../../app/stores/cart';
 import CartToast from './CartToast';
 
 export default function ProductDetails({ product }: { product: Product }) {

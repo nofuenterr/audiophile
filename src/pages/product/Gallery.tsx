@@ -1,5 +1,5 @@
 import type { Product } from '../../types/product';
-import ContentWrapper from '../shared/ContentWrapper';
+import ContentWrapper from '../../components/wrappers/ContentWrapper';
 
 type GalleryType = Pick<Product, 'gallery' | 'name'>;
 

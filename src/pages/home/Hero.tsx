@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import data from '../../data/data.json';
-import ContentWrapper from '../shared/ContentWrapper';
+import ContentWrapper from '../../components/wrappers/ContentWrapper';
 
 export default function Hero() {
 	const heroProduct = data[3];

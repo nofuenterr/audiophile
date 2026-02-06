@@ -1,4 +1,4 @@
-import MainWrapper from '../components/shared/MainWrapper';
+import MainWrapper from '../components/wrappers/MainWrapper';
 
 export default function Error() {
 	return (

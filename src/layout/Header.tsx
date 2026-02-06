@@ -1,13 +1,13 @@
 import { AccessibleIcon } from 'radix-ui';
-import ContentWrapper from '../shared/ContentWrapper';
+import ContentWrapper from '../components/wrappers/ContentWrapper';
 import hamburgerIcon from '../../assets/icons/icon-hamburger.svg';
 import brandLogo from '../../assets/icons/logo.svg';
 import cartIcon from '../../assets/icons/icon-cart.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import CartModal from '../cart/CartModal';
-import MenuModal from './MenuModal';
-import { useCartStore } from '../../stores/cart';
+import CartModal from '../components/modals/CartModal';
+import MenuModal from '../components/modals/MenuModal';
+import { useCartStore } from '../app/stores/cart';
 
 export default function Header() {
 	const [menu, setMenu] = useState<boolean>(false);

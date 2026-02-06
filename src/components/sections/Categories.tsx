@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import arrowRightIcon from '../../assets/icons/icon-arrow-right.svg';
-import ContentWrapper from './ContentWrapper';
+import ContentWrapper from '../wrappers/ContentWrapper';
 
 export default function Categories({ onClose }: { onClose?: () => void }) {
 	return (

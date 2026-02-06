@@ -1,7 +1,7 @@
 import { Dialog, VisuallyHidden } from 'radix-ui';
 import type { ReactNode } from 'react';
-import Categories from '../shared/Categories';
-import ContentWrapper from '../shared/ContentWrapper';
+import Categories from '../sections/Categories';
+import ContentWrapper from '../wrappers/ContentWrapper';
 
 interface MenuModalProps {
 	onClose: () => void;

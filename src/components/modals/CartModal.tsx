@@ -1,6 +1,6 @@
 import { Dialog } from 'radix-ui';
 import type { ReactNode } from 'react';
-import { useCartStore, type CartProduct } from '../../stores/cart';
+import { useCartStore, type CartProduct } from '../../app/stores/cart';
 import formatPrice from '../../utils/formatPrice';
 import { Link } from 'react-router-dom';
 import { getCartTotal } from '../../utils/getCartTotal';

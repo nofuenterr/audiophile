@@ -1,4 +1,4 @@
-import ContentWrapper from '../shared/ContentWrapper';
+import ContentWrapper from '../../components/wrappers/ContentWrapper';
 
 export default function CategoryName({ category }: { category: string }) {
 	return (

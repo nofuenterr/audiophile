@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import brandLogo from '../../assets/icons/logo.svg';
-import ContentWrapper from '../shared/ContentWrapper';
-import FacebookIcon from '../icons/FacebookIcon';
-import TwitterIcon from '../icons/TwitterIcon';
-import InstagramIcon from '../icons/InstagramIcon';
+import ContentWrapper from '../components/wrappers/ContentWrapper';
+import FacebookIcon from '../components/icons/FacebookIcon';
+import TwitterIcon from '../components/icons/TwitterIcon';
+import InstagramIcon from '../components/icons/InstagramIcon';
 
 const currentYear = new Date(Date.now()).getFullYear();
 

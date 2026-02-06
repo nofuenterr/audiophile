@@ -1,4 +1,4 @@
-import type { CartProduct } from '../stores/cart';
+import type { CartProduct } from '../app/stores/cart';
 
 export function getCartTotal(cart: CartProduct[] | null | undefined): number {
 	if (!cart) return 0;

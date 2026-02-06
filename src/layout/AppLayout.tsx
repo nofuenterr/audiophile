@@ -1,12 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import ScrollToTop from '../utils/ScrollToTop';
-import Header from './Header';
-import Footer from './Footer';
-import { checkoutFormSchema } from '../../schema/checkoutFormSchema';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import { checkoutFormSchema } from '../pages/checkout/checkoutFormSchema';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
-export default function PageWrapper() {
+export default function AppLayout() {
+	useScrollToTop();
+
 	const form = useForm({
 		resolver: zodResolver(checkoutFormSchema),
 		mode: 'onChange',
@@ -17,8 +19,6 @@ export default function PageWrapper() {
 
 	return (
 		<div className="grid min-h-dvh grid-rows-[auto_1fr_auto]">
-			<ScrollToTop />
-
 			<Header />
 
 			<FormProvider {...form}>

@@ -1,4 +1,4 @@
-import ContentWrapper from './ContentWrapper';
+import ContentWrapper from '../wrappers/ContentWrapper';
 
 export default function About() {
 	return (
