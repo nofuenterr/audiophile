@@ -23,7 +23,7 @@ export default function CartToast({
 			{children}
 
 			<Toast.Root
-				className="bg-light-900 grid w-70 gap-5 rounded-lg p-6 shadow-md"
+				className="bg-light-900 grid w-70 gap-5 rounded-lg p-6 shadow-md data-[state=closed]:animate-[hide_100ms_ease-in_forwards] data-[state=open]:animate-[slideIn_150ms_cubic-bezier(0.16,1,0.3,1)_forwards] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-transform data-[swipe=cancel]:duration-200 data-[swipe=cancel]:ease-out data-[swipe=end]:animate-[swipeOut_100ms_ease-out_forwards] data-[swipe=move]:translate-x-(--radix-toast-swipe-move-x)"
 				open={open}
 				onOpenChange={setOpen}
 			>
