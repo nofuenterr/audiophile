@@ -33,7 +33,7 @@ function Category({ category, onClose }: CategoryProps) {
 			>
 				<div className="h-26 lg:h-40">
 					<img
-						src={`/assets/shared/desktop/image-category-thumbnail-${category}.png`}
+						src={`/assets/shared/desktop/image-category-thumbnail-${category}.webp`}
 						alt={`${category} category thumbnail`}
 						loading="lazy"
 						className="h-full w-full object-cover object-center"

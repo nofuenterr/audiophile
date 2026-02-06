@@ -8,14 +8,14 @@ export default function About() {
 					<picture className="block h-full w-full">
 						<source
 							media="(min-width: 1024px)"
-							srcSet="/assets/shared/desktop/image-best-gear.jpg"
+							srcSet="/assets/shared/desktop/image-best-gear.webp"
 						/>
 						<source
 							media="(min-width: 768px)"
-							srcSet="/assets/shared/tablet/image-best-gear.jpg"
+							srcSet="/assets/shared/tablet/image-best-gear.webp"
 						/>
 						<img
-							src="/assets/shared/mobile/image-best-gear.jpg"
+							src="/assets/shared/mobile/image-best-gear.webp"
 							alt="Best audio gear"
 							className="h-full w-full object-cover object-center lg:col-start-2"
 							loading="lazy"

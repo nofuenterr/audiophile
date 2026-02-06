@@ -15,14 +15,14 @@ export default function FeaturedProducts() {
 						<picture className="block h-full w-full">
 							<source
 								media="(min-width: 1024px)"
-								srcSet="/assets/home/desktop/image-speaker-zx9.png"
+								srcSet="/assets/home/desktop/image-speaker-zx9.webp"
 							/>
 							<source
 								media="(min-width: 768px)"
-								srcSet="/assets/home/tablet/image-speaker-zx9.png"
+								srcSet="/assets/home/tablet/image-speaker-zx9.webp"
 							/>
 							<img
-								src="/assets/home/mobile/image-speaker-zx9.png"
+								src="/assets/home/mobile/image-speaker-zx9.webp"
 								alt={zx9Speaker.name}
 								className="h-full w-full object-fill object-center"
 								loading="lazy"
@@ -50,7 +50,7 @@ export default function FeaturedProducts() {
 					</div>
 				</div>
 
-				<div className="bg-light-700 grid h-80 content-center justify-items-start gap-8 rounded-lg bg-[url('/assets/home/mobile/image-speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat p-6 md:bg-[url('/assets/home/tablet/image-speaker-zx7.jpg')] md:p-16 lg:bg-[url('/assets/home/desktop/image-speaker-zx7.jpg')] lg:p-24">
+				<div className="bg-light-700 grid h-80 content-center justify-items-start gap-8 rounded-lg bg-[url('/assets/home/mobile/image-speaker-zx7.webp')] bg-cover bg-center bg-no-repeat p-6 md:bg-[url('/assets/home/tablet/image-speaker-zx7.webp')] md:p-16 lg:bg-[url('/assets/home/desktop/image-speaker-zx7.webp')] lg:p-24">
 					<h2 className="heading heading-5">{zx7Speaker.name}</h2>
 					<Link
 						to={`/product/${zx7Speaker.slug}`}
@@ -65,14 +65,14 @@ export default function FeaturedProducts() {
 						<picture>
 							<source
 								media="(min-width: 1024px)"
-								srcSet="/assets/home/desktop/image-earphones-yx1.jpg"
+								srcSet="/assets/home/desktop/image-earphones-yx1.webp"
 							/>
 							<source
 								media="(min-width: 768px)"
-								srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
+								srcSet="/assets/home/tablet/image-earphones-yx1.webp"
 							/>
 							<img
-								src="/assets/home/mobile/image-earphones-yx1.jpg"
+								src="/assets/home/mobile/image-earphones-yx1.webp"
 								alt={yx1Earphones.name}
 								className="bg-light-700 size-full object-cover object-center"
 								loading="lazy"
