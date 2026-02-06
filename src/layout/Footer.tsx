@@ -3,7 +3,7 @@ import ContentWrapper from '../components/wrappers/ContentWrapper';
 import FacebookIcon from '../components/icons/FacebookIcon';
 import TwitterIcon from '../components/icons/TwitterIcon';
 import InstagramIcon from '../components/icons/InstagramIcon';
-import brandLogo from '../../assets/icons/logo.svg';
+import brandLogo from '../assets/icons/logo.svg';
 
 const currentYear = new Date(Date.now()).getFullYear();
 

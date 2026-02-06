@@ -5,9 +5,9 @@ import { useCartStore } from '../app/stores/cart';
 import ContentWrapper from '../components/wrappers/ContentWrapper';
 import CartModal from '../components/modals/CartModal';
 import MenuModal from '../components/modals/MenuModal';
-import brandLogo from '../../assets/icons/logo.svg';
-import hamburgerIcon from '../../assets/icons/icon-hamburger.svg';
-import cartIcon from '../../assets/icons/icon-cart.svg';
+import brandLogo from '../assets/icons/logo.svg';
+import hamburgerIcon from '../assets/icons/icon-hamburger.svg';
+import cartIcon from '../assets/icons/icon-cart.svg';
 
 export default function Header() {
 	const [menu, setMenu] = useState<boolean>(false);
