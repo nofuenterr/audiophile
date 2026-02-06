@@ -1,9 +1,9 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Dialog } from 'radix-ui';
 import { useOrdersStore } from '../../app/stores/orders';
 import formatPrice from '../../utils/formatPrice';
 import { getCartTotal } from '../../utils/getCartTotal';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 interface CheckoutModalProps {
 	receipt: boolean;

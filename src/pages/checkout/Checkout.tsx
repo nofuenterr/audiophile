@@ -1,16 +1,16 @@
 import { useState, type ReactNode } from 'react';
-import GoBackButton from '../../components/GoBackButton';
-import MainWrapper from '../../components/wrappers/MainWrapper';
-import ContentWrapper from '../../components/wrappers/ContentWrapper';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import CheckoutModal from './CheckoutModal';
+import { useFormContext } from 'react-hook-form';
 import { useCartStore } from '../../app/stores/cart';
+import { useOrdersStore } from '../../app/stores/orders';
 import formatPrice from '../../utils/formatPrice';
 import { getCartTotal } from '../../utils/getCartTotal';
-import { useFormContext } from 'react-hook-form';
+import GoBackButton from '../../components/GoBackButton';
+import ContentWrapper from '../../components/wrappers/ContentWrapper';
+import MainWrapper from '../../components/wrappers/MainWrapper';
+import CheckoutModal from './CheckoutModal';
 import { type CheckoutForm } from './checkoutFormSchema';
-import { useOrdersStore } from '../../app/stores/orders';
-import { Link } from 'react-router-dom';
 
 export default function Checkout() {
 	return (

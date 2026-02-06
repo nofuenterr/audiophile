@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
-import data from '../data/data.json';
-import GoBackButton from '../components/shared/GoBackButton';
-import ProductDetails from '../components/product/ProductDetails';
-import Gallery from '../components/product/Gallery';
-import Recommendations from '../components/product/Recommendations';
-import Categories from '../components/shared/Categories';
-import About from '../components/shared/About';
-import type { Product } from '../types/product';
-import MainWrapper from '../components/shared/MainWrapper';
+import data from '../../data/data.json';
+import type { Product } from '../../types/product';
+import GoBackButton from '../../components/GoBackButton';
+import Categories from '../../components/sections/Categories';
+import About from '../../components/sections/About';
+import MainWrapper from '../../components/wrappers/MainWrapper';
+import ProductDetails from './ProductDetails';
+import Gallery from './Gallery';
+import Recommendations from './Recommendations';
 
 export default function Product() {
 	const params = useParams();

@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PageWrapper from '../layout/AppLayout';
-import Error from '../pages/Error';
 import Home from '../pages/home/Home';
 import Category from '../pages/category/Category';
 import Product from '../pages/product/Product';
 import Checkout from '../pages/checkout/Checkout';
+import Error from '../pages/Error';
 
 export default function App() {
 	return (

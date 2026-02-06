@@ -1,7 +1,7 @@
-import ContentWrapper from '../shared/ContentWrapper';
-import data from '../../data/data.json';
-import type { Product } from '../../types/product';
 import { Link } from 'react-router-dom';
+import type { Product } from '../../types/product';
+import data from '../../data/data.json';
+import ContentWrapper from '../../components/wrappers/ContentWrapper';
 
 export default function CategoryProducts({ category }: { category: string }) {
 	const categoryProducts: Product[] = data.filter(

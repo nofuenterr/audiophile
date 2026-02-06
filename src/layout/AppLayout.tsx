@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import Header from '../layout/Header';
-import Footer from '../layout/Footer';
 import { checkoutFormSchema } from '../pages/checkout/checkoutFormSchema';
 import { useScrollToTop } from '../hooks/useScrollToTop';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 export default function AppLayout() {
 	useScrollToTop();

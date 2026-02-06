@@ -1,8 +1,8 @@
-import { Dialog } from 'radix-ui';
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { Dialog } from 'radix-ui';
 import { useCartStore, type CartProduct } from '../../app/stores/cart';
 import formatPrice from '../../utils/formatPrice';
-import { Link } from 'react-router-dom';
 import { getCartTotal } from '../../utils/getCartTotal';
 
 export default function CartModal({ children }: { children: ReactNode }) {

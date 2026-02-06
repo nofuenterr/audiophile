@@ -1,5 +1,5 @@
-import { Dialog, VisuallyHidden } from 'radix-ui';
 import type { ReactNode } from 'react';
+import { Dialog, VisuallyHidden } from 'radix-ui';
 import Categories from '../sections/Categories';
 import ContentWrapper from '../wrappers/ContentWrapper';
 
