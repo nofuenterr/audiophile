@@ -27,14 +27,13 @@ type ProductImageType = Pick<Product, 'image' | 'name'>;
 function ProductImage({ image, name }: ProductImageType) {
 	return (
 		<div className="bg-light-700 h-82 w-full overflow-hidden rounded-lg md:h-120 md:min-w-60 lg:h-140 lg:min-w-70">
-			<picture className="block h-full w-full">
+			<picture key={image.mobile} className="block h-full w-full">
 				<source media="(min-width: 1024px)" srcSet={image.desktop} />
 				<source media="(min-width: 768px)" srcSet={image.tablet} />
 				<img
 					src={image.mobile}
 					alt={name}
 					className="h-full w-full object-contain object-center"
-					loading="eager"
 				/>
 			</picture>
 		</div>

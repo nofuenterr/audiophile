@@ -35,7 +35,6 @@ function Category({ category, onClose }: CategoryProps) {
 					<img
 						src={`/assets/shared/desktop/image-category-thumbnail-${category}.webp`}
 						alt={`${category} category thumbnail`}
-						loading="lazy"
 						className="h-full w-full object-cover object-center"
 					/>
 				</div>

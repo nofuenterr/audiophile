@@ -35,7 +35,7 @@ export default function Recommendations({
 											src={rec.image.mobile}
 											alt={name}
 											className="h-full w-full object-contain object-center"
-											loading="eager"
+											loading="lazy"
 										/>
 									</picture>
 								</div>

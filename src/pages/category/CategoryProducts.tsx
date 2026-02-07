@@ -35,7 +35,7 @@ function ProductCard({ product }: ProductCardProps) {
 	return (
 		<li className="grid gap-8 lg:flex lg:items-center lg:gap-31 lg:even:flex-row-reverse">
 			<div className="bg-light-700 h-88 w-full overflow-hidden rounded-lg lg:h-140 lg:w-135">
-				<picture className="block h-full w-full">
+				<picture key={product.categoryImage.mobile}  className="block h-full w-full">
 					<source
 						media="(min-width: 1024px)"
 						srcSet={product.categoryImage.desktop}
